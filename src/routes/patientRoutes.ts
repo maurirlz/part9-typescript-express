@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', (_req, res) => {
   const patients: Patient[] = getPatients();
+  console.log(patients);
 
   res.send(patients);
 });
