@@ -6,7 +6,14 @@ const router = express.Router();
 
 router.get('/', (_req, res) => {
   const patients: Patient[] = getPatients();
-  console.log(patients);
 
   res.send(patients);
 });
+
+router.post('/', (_req, _res) => {
+  // const newPatient: NewPatient = toNewPatient(req.body);
+  // const addedPatient: Patient = addPatient(newPatient);
+  // res.status(201).send(addedPatient);
+});
+
+export default router;
