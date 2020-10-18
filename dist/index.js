@@ -6,5 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = require("./utils/config");
 const app_1 = __importDefault(require("./app"));
 app_1.default.listen(config_1.PORT, () => {
-    console.warn(`App listening on port ${config_1.PORT || 3001}`);
+    console.warn(`App listening on port ${config_1.PORT || 'PORT is undefined.'}`);
 });
