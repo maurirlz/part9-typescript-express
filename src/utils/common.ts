@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Gender, NewPatient } from '../types/patientTypes';
 
-const isString = (value: any): value is string => {
+const isString = (value: any): value is string => { // value is string type-guard
   return typeof value === 'string' || value instanceof String;
 };
 
@@ -39,12 +39,14 @@ const validateGender = (value: any): Gender => {
   return value;
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const toNewPatient = (obj: any): NewPatient => {
   return {
     name: validateString(obj.name, 'name'),
     dateOfBirth: validateDate(obj.dateOfBirth),
     ssn: validateString(obj.ssn, 'ssn'),
     gender: validateGender(obj.gender),
-    occupation: validateString(obj.occupation, 'occupation')
+    occupation: validateString(obj.occupation, 'occupation'),
+    entries: []
   };
 };
